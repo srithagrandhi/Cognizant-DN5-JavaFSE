@@ -1,6 +1,14 @@
 public class Main {
     public static void main(String[] args) {
-        Singleton obj = Singleton.getInstance();
-        obj.showMessage();
+        NotificationFactory factory = new NotificationFactory();
+
+        Notification n1 = factory.createNotification("EMAIL");
+        n1.notifyUser();
+
+        Notification n2 = factory.createNotification("SMS");
+        n2.notifyUser();
+
+        Notification n3 = factory.createNotification("PUSH");
+        n3.notifyUser();
     }
 }
